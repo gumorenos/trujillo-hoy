@@ -1,0 +1,116 @@
+<title>Trujillo hoy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Una columna, letra grande y contraste alto, pensado para lectura en celular por una persona mayor.
+   Cada bloque dice su estado con una palabra y un símbolo, no solo con color. */
+:root {
+  --bg: #fbfaf6;
+  --fg: #16181a;
+  --muted: #4a4f55;
+  --line: #c9c6bb;
+  --ok: #0b5d2a;
+  --ok-bg: #e3f1e7;
+  --obra: #7a3d00;
+  --obra-bg: #fbeed8;
+  --duda: #2d3f6b;
+  --duda-bg: #e6eaf5;
+  --font: "Atkinson Hyperlegible", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14161a; --fg: #f3f1ea; --muted: #b9bcc2; --line: #3a3e45;
+    --ok: #8fe0a8; --ok-bg: #16301f;
+    --obra: #ffc98a; --obra-bg: #3a2a12;
+    --duda: #b6c6f5; --duda-bg: #1d2640;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14161a; --fg: #f3f1ea; --muted: #b9bcc2; --line: #3a3e45;
+  --ok: #8fe0a8; --ok-bg: #16301f;
+  --obra: #ffc98a; --obra-bg: #3a2a12;
+  --duda: #b6c6f5; --duda-bg: #1d2640;
+  color-scheme: dark;
+}
+body {
+  background: var(--bg); color: var(--fg); font-family: var(--font);
+  font-size: 22px; line-height: 1.5;
+  padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 40px;
+}
+main { max-width: 36rem; margin: 0 auto; display: grid; gap: 28px; }
+h1 { font-size: 2.2rem; line-height: 1.15; margin: 0; text-wrap: balance; }
+.fecha { color: var(--muted); font-size: 1.1rem; margin: 6px 0 0; }
+.aviso { border: 2px solid var(--line); border-radius: 10px; padding: 14px 16px; font-size: 1.05rem; }
+.aviso strong { display: block; margin-bottom: 4px; }
+section { border-radius: 12px; padding: 18px 16px 8px; }
+section h2 { font-size: 1.6rem; margin: 0 0 4px; display: flex; gap: 10px; align-items: baseline; }
+section p.ayuda { margin: 0 0 12px; font-size: 1.05rem; }
+.ok { background: var(--ok-bg); color: var(--ok); }
+.obra { background: var(--obra-bg); color: var(--obra); }
+.duda { background: var(--duda-bg); color: var(--duda); }
+ul { list-style: none; margin: 0; padding: 0; }
+li { color: var(--fg); border-top: 1px solid var(--line); padding: 14px 0; }
+li b { display: block; font-size: 1.25rem; }
+li span { display: block; }
+li .visto { color: var(--muted); font-size: 1rem; }
+.fuera h2 { font-size: 1.3rem; margin: 0 0 6px; }
+.fuera ul { list-style: disc; padding-left: 1.2rem; }
+.fuera li { border: 0; padding: 4px 0; }
+footer { color: var(--muted); font-size: 1rem; }
+a:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+</style>
+
+<main>
+  <header>
+    <h1>Trujillo hoy</h1>
+    <p class="fecha">Información de la Municipalidad al jueves 15 de octubre</p>
+  </header>
+
+  <div class="aviso">
+    <strong>Esto es una prueba.</strong>
+    Solo incluye lo que la Municipalidad publicó. Puede haber otros cortes que no aparecen aquí. Antes de salir, confirma con alguien que ya haya pasado.
+  </div>
+
+  <section class="ok" aria-labelledby="t-ok">
+    <h2 id="t-ok"><span aria-hidden="true">✔</span> Ya se puede pasar</h2>
+    <p class="ayuda">La Municipalidad dijo que reabrió o terminó.</p>
+    <ul>
+      <li><b>Av. América Sur, cerca del óvalo Grau</b><span>Se reabre el viernes 16 de octubre.</span><span class="visto">Aviso del 15 de octubre</span></li>
+      <li><b>Jirón Independencia</b><span>La Municipalidad terminó las mejoras.</span><span class="visto">Aviso del 13 de octubre</span></li>
+      <li><b>Av. Vera Enríquez, entre España y Teodoro Valcárcel</b><span>Ya hay tránsito, pero siguen cierres por tramos hasta fines de mes.</span><span class="visto">Aviso del 15 de octubre</span></li>
+    </ul>
+  </section>
+
+  <section class="obra" aria-labelledby="t-obra">
+    <h2 id="t-obra"><span aria-hidden="true">⚠</span> Hay obras. Ten cuidado</h2>
+    <p class="ayuda">Puede haber desvíos o carriles cerrados.</p>
+    <ul>
+      <li><b>Av. Perú, entre España y Federico Villarreal</b><span>Obra avanzada al 65 %. Termina el 11 de noviembre.</span><span class="visto">Aviso del 7 de octubre</span></li>
+      <li><b>Av. América Sur, entre el óvalo Víctor Larco y César Vallejo</b><span>Obra avanzada al 72 %.</span><span class="visto">Aviso del 6 de octubre</span></li>
+      <li><b>Pasajes San Agustín y Armas</b><span>En renovación desde el 16 de setiembre. San Agustín será solo para peatones.</span><span class="visto">Aviso del 15 de octubre</span></li>
+      <li><b>Calle Paraguay, Monserrate</b><span>Pavimentación con adoquines desde el 1 de octubre.</span><span class="visto">Aviso del 1 de octubre</span></li>
+      <li><b>Plazuela La Merced y jirón Pizarro</b><span>Están cambiando el piso de la plazuela.</span><span class="visto">Aviso del 14 de octubre</span></li>
+    </ul>
+  </section>
+
+  <section class="duda" aria-labelledby="t-duda">
+    <h2 id="t-duda"><span aria-hidden="true">?</span> No sabemos si ya terminó</h2>
+    <p class="ayuda">No hay aviso de que haya acabado.</p>
+    <ul>
+      <li><b>Jirón San Martín</b><span>Tenía 60 % de avance el 9 de octubre.</span><span class="visto">Aviso del 9 de octubre</span></li>
+    </ul>
+  </section>
+
+  <section class="fuera" aria-labelledby="t-fuera">
+    <h2 id="t-fuera">Lo que esta página no sabe</h2>
+    <ul>
+      <li>La hora exacta de cada cierre.</li>
+      <li>Accidentes, marchas o tuberías rotas de hoy.</li>
+      <li>Lo que la Municipalidad no publicó.</li>
+    </ul>
+  </section>
+
+  <footer>Fuente: noticias de la Municipalidad Provincial de Trujillo (gob.pe). Página de prueba, no oficial.</footer>
+</main>
